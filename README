@@ -1,0 +1,12 @@
+newpyproj
+
+Automatically creates a new python project folder, using best project standards, with common files, documentation, tests.
+
+To run cli:
+    python cli.py
+
+To run tests:
+    python -m pytest
+
+To update documentation:
+    python -m pydoc -w newpyproj
