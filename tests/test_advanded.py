@@ -14,6 +14,12 @@ class TestCreation:
     def test_non_standard(self):
         pass
 
+class TestCreationModification:
+    def test_cli(self):
+        pass
+
+    def test_gui(self):
+        pass
 
 class TestFolderReading:
     def test_pontuar_valor(self):

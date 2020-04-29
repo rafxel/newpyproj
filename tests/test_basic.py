@@ -54,6 +54,14 @@ class TestArgparsing:
         dic_vars = vars(parser)
         assert dic_vars['verbose'] == True, "Verbose argument in parser failed."
     
+    def test_shebang(self):
+        parser = parse_args(['projectnametest', '-s'])
+        dic_vars = vars(parser)
+        assert dic_vars['shebang'] == False, "Shebang argument abbreviation in parser failed."
+        parser = parse_args(['projectnametest', '--shebang'])
+        dic_vars = vars(parser)
+        assert dic_vars['shebang'] == False, "Shebang argument in parser failed."
+    
     def test_test(self):
         parser = parse_args(['projectnametest', '-t'])
         dic_vars = vars(parser)

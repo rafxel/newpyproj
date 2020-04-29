@@ -3,6 +3,7 @@
 
 import argparse
 import sys
+import os
 
 folders = {'docs':'', 'tests':''}
 root_files = {'.ignore':'', 'cli.py':'', 'gui.py':'', 'README':'', 'LICENSE':'', 'setup.py':''}
@@ -26,6 +27,8 @@ def parse_args(args):
     parser.add_argument('-c', '--cli', action='store_true', help='Creates a command line interface project')
     parser.add_argument('-g', '--gui', action='store_true', help='Creates a graphical user interface project')
     parser.add_argument('-v', '--verbose', action='store_true', help='Verbose mode')
+    parser.add_argument('-r', '--resources', action='store_true', help='Include resources folder')
+    parser.add_argument('-s', '--shebang', action='store_false', help='Supress shebang line in files')
     parser.add_argument('-t', '--test', action='store_false', help='Supress test folders and files')
     parser.add_argument('-d', '--doc', action='store_false', help='Supress doc folders and files')
     
@@ -38,7 +41,21 @@ def create_folders(project_name, args):
         project_name {str} -- Name of the python project
         args {list} -- List of arguments to be used when creating folders
     """
-    pass
+    folders[project_name] = ''
+
+    if args['docs'] = False:
+        del(folders['docs'])
+    if args['tests'] = False:
+        del(folders['tests'])
+
+    # check if not already inside folder with project name
+    if os.path.split(os.getcwd())[1] != project_name:
+        os.mkdir(project_name)
+        os.chdir(project_name)
+
+    for folder in folders:
+        os.mkdir(folder)
+
 
 def create_files(project_name, args):
     """Creates project files from a list
@@ -47,6 +64,12 @@ def create_files(project_name, args):
         project_name {str} -- Name of the python project
         args {list} -- List of arguments to be used when creating files
     """
+    project_files[project_name + '.py'] = ''
+
+    # check if in root and folders exist
+
+    for file_name in root_files:
+        open(file_name, 'w').close()
     pass
 
 def initiate_git(project_name):
