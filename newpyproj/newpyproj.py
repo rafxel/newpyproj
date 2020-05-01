@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import sys
 import os
+import sys
+import subprocess
 
 folders = {'docs':'', 'tests':''}
 root_files = {'.ignore':'', 'cli.py':'', 'gui.py':'', 'README':'', 'LICENSE':'', 'setup.py':''}
@@ -34,52 +35,77 @@ def parse_args(args):
     
     return parser.parse_args(args)
 
-def create_folders(project_name, args):
+def create_folders(project_name, args={}):
     """Creates project folders from a list
 
     Arguments:
         project_name {str} -- Name of the python project
         args {list} -- List of arguments to be used when creating folders
     """
-    folders[project_name] = ''
+    
+    creation_folders = folders.copy()
+    creation_folders[project_name] = ''
 
-    if args['docs'] = False:
-        del(folders['docs'])
-    if args['tests'] = False:
-        del(folders['tests'])
+    if 'docs' in args and \
+        args['docs'] == False:
+        del(creation_folders['docs'])
+    if 'tests' in args and \
+        args['tests'] == False:
+        del(creation_folders['tests'])
 
     # check if not already inside folder with project name
     if os.path.split(os.getcwd())[1] != project_name:
         os.mkdir(project_name)
         os.chdir(project_name)
 
-    for folder in folders:
+    for folder in creation_folders:
         os.mkdir(folder)
+    
 
 
-def create_files(project_name, args):
+def create_files(project_name, args={}):
     """Creates project files from a list
 
     Arguments:
         project_name {str} -- Name of the python project
         args {list} -- List of arguments to be used when creating files
     """
-    project_files[project_name + '.py'] = ''
+    def open_files(file_list):
+        for file_name in file_list:
+            open(file_name, 'w').close()
+
+    creation_project_files = project_files.copy()
+    creation_project_files[project_name + '.py'] = ''
 
     # check if in root and folders exist
+    if os.path.split(os.getcwd())[1] == project_name and \
+        os.path.isdir(project_name):
+        
+        open_files(root_files)
+        os.chdir(project_name)
+        open_files(creation_project_files)
+        os.chdir('..')
+        os.chdir('tests')
+        open_files(test_files)
+        os.chdir('..')
+    else:
+        raise OSError('Folder not found')
 
-    for file_name in root_files:
-        open(file_name, 'w').close()
-    pass
+
 
 def initiate_git(project_name):
     """Initializes git in project folder
-    TODO: Go into the directory containing the project.
-    TODO: Type git init .
-    TODO: Type git add to add all of the relevant files.
-    TODO: You'll probably want to create a . gitignore file right away, to indicate all of the files you don't want to track. Use git add . gitignore , too.
-    TODO: Type git commit.
+
     Arguments:
         project_name {str} -- Name of the python project
     """
-    pass
+    initial_folder = os.getcwd()
+    os.chdir(project_name)
+    try:
+        subprocess.call(['git', 'init'])
+        subprocess.call(['git', 'add', '.'])
+        subprocess.call(['git', 'commit', '-m', 'First Commit'])
+    except OSError as e:
+        print('GIT not available')
+    
+    os.chdir(initial_folder)
