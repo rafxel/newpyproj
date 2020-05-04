@@ -1,6 +1,7 @@
 from newpyproj.newpyproj import folders
 from newpyproj.newpyproj import root_files, project_files, test_files
 from newpyproj.newpyproj import parse_args
+from newpyproj.support import content_dict
 
 class TestFolders:
     def test_minimum_folders(self):
@@ -27,53 +28,70 @@ class TestFiles:
 class TestArgparsing:
     def test_project_name(self):
         parser = parse_args(['projectnametest'])
-        dic_vars = vars(parser)
-        assert dic_vars['project_name'] == 'projectnametest', "Project name argument in parser failed."
+        assert parser['project_name'] == 'projectnametest', "Project name argument in parser failed."
 
     def test_cli(self):
         parser = parse_args(['projectnametest', '-c'])
-        dic_vars = vars(parser)
-        assert dic_vars['cli'] == True, "Command line argument abbreviation in parser failed."
+        assert parser['cli'] == True, "Command line argument abbreviation in parser failed."
         parser = parse_args(['projectnametest', '--cli'])
-        dic_vars = vars(parser)
-        assert dic_vars['cli'] == True, "Command line argument in parser failed."
+        assert parser['cli'] == True, "Command line argument in parser failed."
     
     def test_gui(self):
         parser = parse_args(['projectnametest', '-g'])
-        dic_vars = vars(parser)
-        assert dic_vars['gui'] == True, "GUI argument abbreviation in parser failed."
+        assert parser['gui'] == True, "GUI argument abbreviation in parser failed."
         parser = parse_args(['projectnametest', '--gui'])
-        dic_vars = vars(parser)
-        assert dic_vars['gui'] == True, "GUI argument in parser failed."
+        assert parser['gui'] == True, "GUI argument in parser failed."
     
     def test_verbose(self):
         parser = parse_args(['projectnametest', '-v'])
-        dic_vars = vars(parser)
-        assert dic_vars['verbose'] == True, "Verbose argument abbreviation in parser failed."
+        assert parser['verbose'] == True, "Verbose argument abbreviation in parser failed."
         parser = parse_args(['projectnametest', '--verbose'])
-        dic_vars = vars(parser)
-        assert dic_vars['verbose'] == True, "Verbose argument in parser failed."
-    
+        assert parser['verbose'] == True, "Verbose argument in parser failed."
+
+    def test_pytest(self):
+        parser = parse_args(['projectnametest', '-p'])
+        assert parser['pytest'] == True, "Pytest argument abbreviation in parser failed."
+        parser = parse_args(['projectnametest', '--pytest'])
+        assert parser['pytest'] == True, "Pytest argument in parser failed."
+
+    def test_resources(self):
+        parser = parse_args(['projectnametest', '-r'])
+        assert parser['resources'] == True, "Resources argument abbreviation in parser failed."
+        parser = parse_args(['projectnametest', '--resources'])
+        assert parser['resources'] == True, "resources argument in parser failed."
+
     def test_shebang(self):
         parser = parse_args(['projectnametest', '-s'])
-        dic_vars = vars(parser)
-        assert dic_vars['shebang'] == False, "Shebang argument abbreviation in parser failed."
+        assert parser['shebang'] == False, "Shebang argument abbreviation in parser failed."
         parser = parse_args(['projectnametest', '--shebang'])
-        dic_vars = vars(parser)
-        assert dic_vars['shebang'] == False, "Shebang argument in parser failed."
+        assert parser['shebang'] == False, "Shebang argument in parser failed."
     
     def test_test(self):
         parser = parse_args(['projectnametest', '-t'])
-        dic_vars = vars(parser)
-        assert dic_vars['test'] == False, "Test argument abbreviation in parser failed."
-        parser = parse_args(['projectnametest', '--test'])
-        dic_vars = vars(parser)
-        assert dic_vars['test'] == False, "Test argument in parser failed."
+        assert parser['tests'] == False, "Test argument abbreviation in parser failed."
+        parser = parse_args(['projectnametest', '--tests'])
+        assert parser['tests'] == False, "Test argument in parser failed."
     
     def test_doc(self):
         parser = parse_args(['projectnametest', '-d'])
-        dic_vars = vars(parser)
-        assert dic_vars['doc'] == False, "Documentation argument abbreviation in parser failed."
-        parser = parse_args(['projectnametest', '--doc'])
-        dic_vars = vars(parser)
-        assert dic_vars['doc'] == False, "Documentation in parser failed."
+        assert parser['docs'] == False, "Documentation argument abbreviation in parser failed."
+        parser = parse_args(['projectnametest', '--docs'])
+        assert parser['docs'] == False, "Documentation in parser failed."
+
+class TestContentdictionary:
+    def test_contentdictionary(self):
+        for item in ['projectfile',
+                     'ignore',
+                     'cli',
+                     'gui',
+                     'cli2',
+                     'gui2',
+                     'readme',
+                     'license',
+                     'setup',
+                     'init',
+                     'support',
+                     'test_advanced',
+                     'test_basic',
+                     'shebang']:
+            assert item in content_dict, f"No corresponding entry in content dictionary, for {item} file."
