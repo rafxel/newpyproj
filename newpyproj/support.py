@@ -194,7 +194,13 @@ readme_txt = """
 
 This is the [[projectname]] package. You can use
 [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content."""
+to write your content.
+
+## Installation
+
+## Usage
+
+"""
 license_txt = """
 MIT License
 
