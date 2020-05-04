@@ -198,6 +198,8 @@ to write your content."""
 license_txt = """
 MIT License
 
+Copyright (c) YEAR YOUR NAME
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -223,7 +225,7 @@ with open("README", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="YOUR-USERNAME-HERE", # Replace with your own username
+    name="[[projectname]]",
     version="0.0.1",
     author="Example Author",
     author_email="author@example.com",
