@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# TODO remove pytest dependency using unittest
+# TODO include differente licenses
+# TODO include template for tkinter project
+# TODO include template for pyqt5 project
+
 import argparse
 import logging
 import os

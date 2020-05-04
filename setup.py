@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="newpyproj",
-    version="0.0.2",
+    version="0.0.3",
     author="Rafael Leite Paulo",
     author_email="rafael@leite.org",
     description="Automatically creates a new python project folder",
