@@ -30,5 +30,7 @@ Automatically creates a *new python project folder*, using best project standard
 ## References
 
 [Structuring Your Project](http://docs.python-guide.org/en/latest/writing/structure/) by Kenneth Reitz
+
 [Python Application Layouts: A Reference](https://realpython.com/python-application-layouts/) by Kyle Stratis
+
 [Dead Simple Python: Project Structure and Imports](https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6) by Jason C. McDonald
