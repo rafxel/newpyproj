@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module newpyproj.newpyproj</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="newpyproj.html"><font color="#ffffff">newpyproj</font></a>.newpyproj</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cjuiz%20federal%5Conedrive%5Cdesenvolvimento%5Cnewpyproj%5Cnewpyproj%5Cnewpyproj.py">c:\users\juiz federal\onedrive\desenvolvimento\newpyproj\newpyproj\newpyproj.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="argparse.html">argparse</a><br>
+<a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="subprocess.html">subprocess</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-create_files"><strong>create_files</strong></a>(project_name: str, args: dict = {}) -&gt; bool</dt><dd><tt>Creates&nbsp;project&nbsp;files&nbsp;from&nbsp;a&nbsp;predefined&nbsp;list<br>
+&nbsp;<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;project_name&nbsp;{str}&nbsp;--&nbsp;Name&nbsp;of&nbsp;the&nbsp;python&nbsp;project<br>
+&nbsp;<br>
+Keyword&nbsp;Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args&nbsp;{dict}&nbsp;--&nbsp;Dictionary&nbsp;of&nbsp;the&nbsp;arguments&nbsp;(default:&nbsp;{{}})<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;--&nbsp;File&nbsp;creation&nbsp;status,&nbsp;True&nbsp;if&nbsp;all&nbsp;files&nbsp;created</tt></dd></dl>
+ <dl><dt><a name="-create_folders"><strong>create_folders</strong></a>(project_name: str, args: dict = {}) -&gt; bool</dt><dd><tt>Creates&nbsp;project&nbsp;folders&nbsp;from&nbsp;a&nbsp;predefined&nbsp;list<br>
+&nbsp;<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;project_name&nbsp;{str}&nbsp;--&nbsp;Name&nbsp;of&nbsp;the&nbsp;python&nbsp;project<br>
+&nbsp;<br>
+Keyword&nbsp;Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args&nbsp;{dict}&nbsp;--&nbsp;Dictionary&nbsp;of&nbsp;the&nbsp;arguments&nbsp;(default:&nbsp;{{}})<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;--&nbsp;Folder&nbsp;creation&nbsp;status,&nbsp;True&nbsp;if&nbsp;all&nbsp;folders&nbsp;created</tt></dd></dl>
+ <dl><dt><a name="-create_template"><strong>create_template</strong></a>(project_name: str, args: dict = {})</dt></dl>
+ <dl><dt><a name="-initiate_git"><strong>initiate_git</strong></a>(project_name: str)</dt><dd><tt>Initializes&nbsp;git&nbsp;in&nbsp;project&nbsp;folder<br>
+&nbsp;<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;project_name&nbsp;{str}&nbsp;--&nbsp;Name&nbsp;of&nbsp;the&nbsp;python&nbsp;project</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-parse_args"><strong>parse_args</strong></a>(args: list) -&gt; dict</dt><dd><tt>Parse&nbsp;command&nbsp;line&nbsp;arguments<br>
+&nbsp;<br>
+Best&nbsp;use&nbsp;is&nbsp;to&nbsp;import&nbsp;with&nbsp;the&nbsp;sys&nbsp;module:&nbsp;sys.argv[1:]<br>
+*&nbsp;first&nbsp;element&nbsp;is&nbsp;script&nbsp;name<br>
+&nbsp;<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args&nbsp;{list}&nbsp;--&nbsp;Arguments&nbsp;from&nbsp;the&nbsp;command&nbsp;line<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict&nbsp;--&nbsp;returns&nbsp;a&nbsp;dict&nbsp;with&nbsp;the&nbsp;parsed&nbsp;arguments</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>content_dict</strong> = {'cli': '<font color="#c040c0">\n</font>from [[projectname]] import cli<font color="#c040c0">\n\n</font>cli.start_cli()<font color="#c040c0">\n</font>', 'cli2': "<font color="#c040c0">\n\n</font>def start_cli():<font color="#c040c0">\n</font>    print('Starting cli')<font color="#c040c0">\n</font>", 'gui': '<font color="#c040c0">\n</font>from [[projectname]] import gui<font color="#c040c0">\n\n</font>gui.start_gui()<font color="#c040c0">\n</font>', 'gui2': "<font color="#c040c0">\n\n</font>def start_gui():<font color="#c040c0">\n</font>    print('Starting gui')<font color="#c040c0">\n</font>", 'ignore': '<font color="#c040c0">\n</font># Template<font color="#c040c0">\n</font># From: https://github.com/github/gi...er<font color="#c040c0">\n</font>.pytype/<font color="#c040c0">\n\n</font># Cython debug symbols<font color="#c040c0">\n</font>cython_debug/', 'init': '', 'license': '<font color="#c040c0">\n</font>MIT License<font color="#c040c0">\n\n</font>Permission is hereby granted, free...RE OR THE USE OR OTHER DEALINGS IN THE<font color="#c040c0">\n</font>SOFTWARE.<font color="#c040c0">\n</font>', 'projectfile': "<font color="#c040c0">\n</font>import logging<font color="#c040c0">\n</font>from [[projectname]].support imp...content)<font color="#c040c0">\n\n\n</font>if __name__ == '__main__':<font color="#c040c0">\n</font>    main()<font color="#c040c0">\n</font>", 'readme': '<font color="#c040c0">\n</font># [[projectname]]<font color="#c040c0">\n\n</font>This is the [[projectname]] ...tures/mastering-markdown/)<font color="#c040c0">\n</font>to write your content.', 'setup': '<font color="#c040c0">\n</font>import setuptools<font color="#c040c0">\n\n</font>with open("README", "r") as ...dependent",<font color="#c040c0">\n</font>    ],<font color="#c040c0">\n</font>    python_requires=<font color="#c040c0">\'</font>&gt;=3.6<font color="#c040c0">\'</font>,<font color="#c040c0">\n</font>)', ...}<br>
+<strong>folders</strong> = ['docs', 'tests']<br>
+<strong>project_files</strong> = ['__init__.py', 'support.py']<br>
+<strong>root_files</strong> = ['.ignore', 'README', 'LICENSE', 'setup.py']<br>
+<strong>test_files</strong> = ['test_advanced.py', 'test_basic.py']</td></tr></table>
+</body></html>
