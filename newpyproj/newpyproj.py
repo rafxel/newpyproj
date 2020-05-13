@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# TODO modo verbose não está desligando
 # TODO remove pytest dependency using unittest
 # TODO include differente licenses
 # TODO include template for tkinter project
@@ -16,7 +17,7 @@ from newpyproj.support import content_dict
 logging.basicConfig(format="%(message)s", level=logging.DEBUG)
 
 folders = ['docs', 'tests']
-root_files = ['.ignore', 'README', 'LICENSE', 'setup.py']
+root_files = ['.gitignore', 'README', 'LICENSE', 'setup.py']
 project_files = ['__init__.py', 'support.py']
 test_files = ['test_advanced.py', 'test_basic.py']
 

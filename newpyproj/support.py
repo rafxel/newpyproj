@@ -27,7 +27,7 @@ def main():
 if __name__ == '__main__':
     main()
 """
-ignore_txt = """
+gitignore_txt = """
 # Template
 # From: https://github.com/github/gitignore/
 # 
@@ -292,7 +292,7 @@ shebang_txt = """#!/usr/bin/env python
 """
 
 content_dict = {'projectfile': projectfile_txt,
-                'ignore': ignore_txt,
+                'gitignore': gitignore_txt,
                 'cli': cli_txt,
                 'gui': gui_txt,
                 'cli2': cli2_txt,

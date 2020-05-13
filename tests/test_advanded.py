@@ -97,7 +97,7 @@ class TestTemplate:
         create_template(testname, args)
     
     def basic_fileloading(self, testname, args):
-        file_content = {'ignore': open('.ignore','r').read(),
+        file_content = {'ignore': open('.gitignore','r').read(),
                         'readme': open('README','r').read(),
                         'license': open('LICENSE','r').read(),
                         'setup': open('setup.py','r').read(),

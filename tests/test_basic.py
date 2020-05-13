@@ -11,7 +11,7 @@ class TestFolders:
 
 class TestFiles:
     def root_files(self):
-        minimum_root = ['.ignore', 'cli.py', 'gui.py', 'README', 'LICENSE', 'setup.py']
+        minimum_root = ['.gitignore', 'cli.py', 'gui.py', 'README', 'LICENSE', 'setup.py']
         for root_file in minimum_root:
             assert root_file in root_files, f"Missing one of the minimum root files: {root_file}"
     
@@ -81,7 +81,7 @@ class TestArgparsing:
 class TestContentdictionary:
     def test_contentdictionary(self):
         for item in ['projectfile',
-                     'ignore',
+                     'gitignore',
                      'cli',
                      'gui',
                      'cli2',
